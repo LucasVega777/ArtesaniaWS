@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block contenido%}
+	<!-- Main -->
+    <div id="main">
+        <div class="inner">
+            <header>
+                <h1>
+                Catálogo de Productos de la <a href="/">Artesanía San Salvador</a>.
+                </h1>
+            </header>
+            <section class="tiles">
+                {% for producto in productos %}
+                    <article class="style5">
+                        <span class="image">
+                            <img src='/media/{{producto.imagen}}' alt="" />
+                        </span>
+                        <a href="generic.html">
+                            <h2>{{producto.nombre}}</h2>
+                            <div class="content">
+                                <p>{{producto.precio}} Gs.</p>
+                            </div>
+                        </a>
+                    </article>
+                {% endfor %}
+            </section>
+        </div>
+    </div>
+
+{% endblock contenido %}
